@@ -1,3 +1,4 @@
+import applier from "./core/applier/applier";
 import CommBus from "./core/comm-bus/comm-bus";
 import LoggerComposite from "./core/logger/logger-composite";
 import ConsoleLogger from "./core/logger/types/console-logger";
@@ -14,6 +15,8 @@ import ContentWeb from "./ui/content-web/content-web";
 import Footer from "./ui/footer/footer";
 import Header from "./ui/header/header";
 import Sidebar from "./ui/sidebar/sidebar";
+
+console.info("env", process.env.NODE_ENV);
 
 const personalRepo = new PersonalInformationInMemoryRepository();
 const skillRepo = new SkillInMemoryRepository();

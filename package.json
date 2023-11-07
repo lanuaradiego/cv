@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npx webpack --mode production --config webpack.config.prd.js",
-    "build-dev": "npx webpack --mode development --config webpack.config.dev.js",
+    "build-dev": "npx webpack --mode development --config webpack.config.dev.js --stats-error-details",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,9 +25,13 @@
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.8.1",
     "style-loader": "3.3.3",
+    "terser-webpack-plugin": "5.3.9",
     "ts-loader": "9.4.4",
     "typescript": "5.2.2",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4"
+  },
+  "resolutions": {
+    "terser-webpack-plugin": "5.3.1"
   }
 }
