@@ -1,0 +1,128 @@
+<div style="padding: 10px;">
+    <style scoped>
+        /* #region Cards */
+        .card-separation {
+            margin-bottom: 10px;
+        }
+
+        .content-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .content-title h2 {
+            margin-left: 15px;
+            color: var(--color-primary-variant);
+        }
+
+        .content-title img {
+            opacity: .5;
+            background-color: #eee;
+            border-radius: 100%;
+            padding: 5px;
+        }
+
+        /* #endregion */
+
+        /* #region Experience */
+        .content-exp {
+            margin-left: 25px;
+        }
+
+        .content-exp h3 {
+            margin: 8px;
+            margin-left: 0;
+            color: var(--color-secondary);
+        }
+
+        .content-exp h4 {
+            margin: 8px;
+            margin-left: 0;
+            color: var(--color-secondary);
+        }
+
+        .content-exp>span {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .content-exp .date {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: var(--color-secondary);
+        }
+
+        .content-exp .date img {
+            width: 24px;
+            height: auto;
+            opacity: .5;
+            background-color: #eee;
+            border-radius: 100%;
+            padding: 5px;
+        }
+
+        .content-exp .date span {
+            margin-left: 10px;
+        }
+
+        .content-exp-sub {
+            margin-left: 25px;
+        }
+
+        .content-exp-sub .content-exp {
+            margin-top: 40px;
+        }
+
+        /* #endregion */
+    </style>
+
+    <!-- #region Experience Card -->
+    <template id="template-experience">
+        <div class="content-exp">
+            <h3></h3>
+            <div class="date">
+                <img src="./assets/icons/ic_calendar_month_48.png" alt="Work Date">
+                <span></span>
+            </div>
+            <span></span>
+        </div>
+    </template>
+    <template id="template-experience-sub">
+        <div class="content-exp-sub">
+            <div class="content-exp">
+                <h4></h4>
+                <div class="date">
+                    <img src="./assets/icons/ic_calendar_month_48.png" alt="Work Date">
+                    <span></span>
+                </div>
+                <span></span>
+            </div>
+        </div>
+    </template>
+    <section id="work-experience" class="component-card card-separation">
+        <div class="content-title">
+            <img src="./assets/icons/ic_work_history_48.png" alt="Work Experience">
+            <h2>Work Experience</h2>
+        </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Education Card-->
+    <section id="education-card" class="component-card card-separation">
+        <div class="content-title">
+            <img src="./assets/icons/ic_school_48.png" alt="Education">
+            <h2>Education</h2>
+        </div>
+    </section>
+    <!-- #endregion  -->
+
+    <!-- #region Skill Card-->
+    <section id="skill-card" class="component-card card-separation">
+        <div class="content-title">
+            <img src="./assets/icons/ic_lightbulb_circle_48.png" alt="Skills">
+            <h2>Skills</h2>
+        </div>
+    </section>
+    <!-- #endregion  -->
+</div>

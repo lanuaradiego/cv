@@ -1,0 +1,36 @@
+<div id="footer-container">
+    <style scoped>
+        #footer-container {
+            height: 100%;
+            border-top: solid 1px var(--color-on-secondary);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        #footer-copyright {
+            position: absolute;
+            right: 10px;
+            font-size: xx-small;
+            margin: 4px;
+        }
+
+        #footer-code {
+            display: flex;
+            align-items: center;
+            font-size: x-small;
+            margin: 1px 2px;
+            padding: 3px 10px;
+        }
+
+        #footer-code>img {
+            height: 16px;
+            margin: 0 3px;
+        }
+    </style>
+    <a href="https://github.com/lanuaradiego/cv" id="footer-code" class="animated-button collision" target="_blank" rel="noopener">
+        <img src="./assets/icons/ic_github_32.ico" alt="See the code">View the code
+    </a>
+    <span id="footer-copyright">© <span id="footer-year"></span> Lanuara Diego Adrian, All rights reserved.</span>
+</div>

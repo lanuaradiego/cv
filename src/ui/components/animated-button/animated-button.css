@@ -1,0 +1,23 @@
+/* To use buttons with different animations, you should apply the class 'animated-button' to an anchor followed by the class for the desired animation. */
+
+a.animated-button:before,
+a.animated-button:after {
+    z-index: -1;
+}
+
+a.animated-button {
+    box-sizing: border-box;
+    transition: 0.7s ease-in-out;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 8px;
+    border: 1px solid currentColor;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

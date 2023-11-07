@@ -1,0 +1,36 @@
+/* a.animated-button.diagonal-close */
+
+a.animated-button.diagonal-close:before,
+a.animated-button.diagonal-close:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    filter: blur(30px);
+    opacity: 0.4;
+    transition: 0.6s;
+}
+
+a.animated-button.diagonal-close:before {
+    width: 60px;
+    background-color: var(--color-secondary);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+a.animated-button.diagonal-close:after {
+    width: 30px;
+    background-color: var(--color-secondary);
+    transform: translateX(-130px) skewX(-45deg);
+}
+
+a.animated-button.diagonal-close:hover:before,
+a.animated-button.diagonal-close:hover:after {
+    opacity: 0.6;
+    transform: translateX(320px) skewX(-45deg);
+}
+
+a.animated-button.diagonal-close:hover {
+    color: var(--color-on-secondary);
+    background-color: var(--color-secondary);
+}

@@ -1,0 +1,110 @@
+@-webkit-keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@-webkit-keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+a.animated-button.collision:before,
+.animated-button.collision:after {
+    position: absolute;
+    top: 50%;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+}
+
+a.animated-button.collision:before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+}
+
+a.animated-button.collision:after {
+    right: -20px;
+    transform: translate(50%, -50%);
+}
+
+a.animated-button.collision:hover {
+    color: var(--color-on-secondary);
+}
+
+a.animated-button.collision:hover:before {
+    -webkit-animation: criss-cross-left 0.8s both;
+    animation: criss-cross-left 0.8s both;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+a.animated-button.collision:hover:after {
+    -webkit-animation: criss-cross-right 0.8s both;
+    animation: criss-cross-right 0.8s both;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}

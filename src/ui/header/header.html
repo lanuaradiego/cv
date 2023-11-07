@@ -1,0 +1,33 @@
+<div id="header-container">
+    <style scoped>
+        #header-container {
+            backdrop-filter: blur(8px);
+            height: 100%;
+            margin-bottom: 2px;
+            border-bottom: solid 1px var(--color-on-secondary);
+            padding-right: 10px;
+        }
+
+        #header-cv-version {
+            float: right;
+            display: flex;
+            align-items: center;
+        }
+
+        #header-cv-version a {
+            font-size: x-small;
+            margin: 1px 2px;
+            padding: 3px 10px;
+        }
+
+        #header-cv-version span {
+            font-size: x-small;
+            margin: 1px 2px;
+        }
+    </style>
+    <div id="header-cv-version">
+        <span>Version:</span>
+        <a id="header-version-web" href="#web" class="animated-button collision">Web</a>
+        <a id="header-version-paper" href="#paper" class="animated-button diagonal-close">Paper (Printable)</a>
+    </div>
+</div>

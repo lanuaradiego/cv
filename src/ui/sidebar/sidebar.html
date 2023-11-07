@@ -1,0 +1,131 @@
+<div id="sidebar-container">
+    <style scoped>
+        #sidebar-container {
+            overflow: hidden;
+            padding: 10px 2px 10px 10px;
+            max-width: 100%;
+            width: calc(100% - 20px);
+            transition: .8s cubic-bezier(.36, -0.01, 0, .77);
+        }
+
+        #profile-image {
+            width: 100%;
+            max-height: 100px;
+            padding-right: 16px;
+            padding-left: 16px;
+            margin-left: -16px;
+            padding-top: 16px;
+            margin-top: -20px;
+            object-fit: contain;
+            border-bottom: solid 1px #EAEAEA;
+            background-color: var(--color-on-secondary);
+        }
+
+        #profile-name {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+
+        .profile-line {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .profile-line>img {
+            width: 16px;
+            opacity: .5;
+        }
+
+        .profile-line>span {
+            color: var(--color-primary-variant);
+            font-size: small;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 4px;
+        }
+
+        .profile-line>a {
+            color: var(--color-primary-variant);
+            font-size: small;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 4px;
+        }
+
+        .profile-line-link {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .profile-line-link>img {
+            width: 16px;
+        }
+
+        .profile-line-link>a {
+            color: var(--color-primary-variant);
+            font-size: small;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 4px;
+        }
+
+        #profile-skill-card {
+            margin-top: 10px;
+        }
+
+        #profile-skill-card>h4 {
+            color: var(--color-primary-variant);
+        }
+
+        .component-animated-bar.skill {
+            margin-bottom: 3px;
+        }
+
+        @media screen and (min-width: 556px) {
+            #sidebar-container {
+                width: 30vw;
+                max-width: 250px;
+            }
+
+            #profile-image {
+                max-height: unset;
+            }
+        }
+    </style>
+    <template id="profile-external-link">
+        <div class="profile-line-link">
+            <img>
+            <a></a>
+        </div>
+    </template>
+    <section id="profile-info-card" class="component-card">
+        <div>
+            <img src="./assets/images/profile.png" alt="Profile Image" id="profile-image">
+            <span id="profile-name"></span>
+        </div>
+        <br>
+        <div class="profile-line">
+            <img src="./assets/icons/ic_business_center_48.png" alt="Profession">
+            <span id="profile-profession"></span>
+        </div>
+        <div class="profile-line">
+            <img src="./assets/icons/ic_mail_48.png" alt="Email">
+            <a id="profile-mail" target="_blank" rel="noopener"></a>
+        </div>
+        <br>
+    </section>
+    <section id="profile-skill-card" class="component-card">
+        <h4>Skill Summary</h4>
+    </section>
+</div>

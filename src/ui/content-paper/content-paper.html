@@ -1,0 +1,320 @@
+<div>
+    <style scoped>
+        div.paper {
+            background: white;
+            display: block;
+            margin: 10px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            padding: 1cm;
+            /* A4 */
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        .title {
+            color: var(--color-secondary);
+        }
+
+        #download-button {
+            position: fixed;
+            background-color: var(--color-on-secondary);
+            padding: 5px;
+            border-radius: 50%;
+            bottom: 45px;
+            right: 30px;
+            width: 32px;
+            height: 32px;
+        }
+
+        #download-button:hover {
+            transition: all .3s ease-in;
+            box-shadow: var(--color-secondary) 1px 0 15px;
+        }
+
+        #info-image {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 3cm;
+            height: 4cm;
+            object-fit: cover;
+            border: solid 1px var(--color-secondary);
+        }
+
+        #info-name {
+            width: 100%;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bold;
+            margin-top: 0;
+            color: var(--color-secondary);
+        }
+
+        .masonry {
+            columns: 2;
+        }
+
+        .masonry>* {
+            break-inside: avoid-column;
+        }
+
+        .row-centered {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+
+        .column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: .5cm;
+        }
+
+        .without-padding {
+            padding: 0;
+        }
+
+        .info-line {
+            display: flex;
+            align-items: center;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .info-line>img {
+            width: 22px;
+        }
+
+        .info-line>span {
+            color: var(--color-primary-variant);
+            font-size: medium;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 4px;
+        }
+
+        .info-line>a {
+            color: var(--color-primary-variant);
+            font-size: small;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 4px;
+        }
+
+        #info-container {
+            flex-grow: 1;
+            width: unset;
+        }
+
+        #skill-summary-container {
+            flex-grow: 1;
+            text-align: left;
+            margin-right: 1cm;
+        }
+
+        #skill-summary-container>h5 {
+            margin-top: 0;
+            margin-bottom: .1cm;
+            color: var(--color-primary-variant)
+        }
+
+        #skill-summary-container .skill {
+            position: relative;
+        }
+
+        #skill-summary-container .skill :first-child {
+            display: inline-block;
+            color: var(--color-primary-variant);
+            margin: 0;
+        }
+
+        #skill-summary-container .skill :last-child {
+            display: inline-block;
+            color: var(--color-secondary);
+            margin: 0;
+        }
+
+        #qr-container {
+            margin-left: 1cm;
+        }
+
+        #qr-container>img {
+            width: 75px;
+            height: 75px;
+        }
+
+        #qr-container>span {
+            display: none;
+            font-size: xx-small;
+            margin-top: -10px;
+        }
+
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .education-item span:nth-child(1),
+        .education-item span:nth-child(2) {
+            color: var(--color-primary-variant);
+        }
+
+        .education-item span:nth-child(4) {
+            color: var(--color-primary-variant);
+            font-size: small;
+        }
+
+        .work-experience {
+            margin-bottom: 10px;
+        }
+
+        .work-experience span:nth-child(1),
+        .work-experience span:nth-child(2) {
+            color: var(--color-primary-variant);
+        }
+
+        .work-experience span:nth-child(4) {
+            font-weight: bold;
+        }
+
+        .work-experience span:nth-child(5) {
+            font-size: small;
+        }
+
+        .work-experience span:nth-child(6) {
+            color: var(--color-primary-variant);
+            font-size: small;
+        }
+
+        .skill-main ul {
+            font-size: small;
+        }
+
+        .skill-desc {
+            color: var(--color-primary-variant);
+            font-size: smaller;
+        }
+
+        @media print {
+            @page {
+                size: auto;
+                margin-top: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            html,
+            body {
+                margin: 0;
+                background-color: white;
+            }
+
+            #scaffold-header,
+            #scaffold-footer,
+            #scaffold-sidebar,
+            #download-button {
+                display: none;
+            }
+
+            #scaffold-container {
+                height: unset;
+            }
+
+            div#pages .paper:last-child {
+                height: auto;
+            }
+
+            div.paper {
+                box-shadow: unset;
+                padding: unset;
+            }
+
+            div.paper>* {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            #qr-container {
+                margin-right: 2.5cm;
+            }
+        }
+    </style>
+    <template id="template-info-line">
+        <div class="info-line">
+            <img>
+            <a target="_blank" rel="noopener"></a>
+        </div>
+    </template>
+    <template id="template-education-item">
+        <li class="education-item">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+    </template>
+    <template id="template-work-experience">
+        <li class="work-experience">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+    </template>
+
+    <div id="pages">
+        <div class="paper">
+            <div class="column without-padding ">
+                <h1 id="info-name"></h1>
+                <div class="row-centered">
+                    <img id="info-image" src="./assets/images/profile.png" alt="Profile Image">
+                    <section id="info-container" class="column">
+                        <div class="info-line">
+                            <img src="./assets/icons/ic_business_center_48.png" alt="Profession">
+                            <span id="info-profession"></span>
+                        </div>
+                        <div class="info-line">
+                            <img src="./assets/icons/ic_mail_48.png" alt="Email">
+                            <a id="info-mail" target="_blank" rel="noopener"></a>
+                        </div>
+                    </section>
+                    <section id="skill-summary-container">
+                        <h5>Skill Summary</h5>
+                    </section>
+                    <div id="qr-container">
+                        <img src="https://chart.apis.google.com/chart?cht=qr&chs=75x75&chl=http://www.me.com/me.asp?i=1%26n=2"
+                            alt="QR Web Version">
+                        <span>Web Version</span>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <h2 class="title">Education</h2>
+                <ul id="education-container"></ul>
+            </section>
+            <section>
+                <h2 class="title">Work Experience</h2>
+                <ul id="experience-container"></ul>
+            </section>
+        </div>
+        <div class="paper">
+            <section>
+                <h2 class="title">Skills</h2>
+                <div id="skill-container1" class="masonry"></div>
+            </section>
+        </div>
+        <div class="paper">
+            <section>
+                <h2 class="title">Skills</h2>
+                <div id="skill-container2" class="masonry"></div>
+            </section>
+        </div>
+    </div>
+    <input id="download-button" type="image" src="./assets/icons/ic_print_48.png" alt="Download CV" />
+</div>

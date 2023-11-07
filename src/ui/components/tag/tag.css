@@ -1,0 +1,58 @@
+/* 
+ * - Customize the color using --custom-color 
+ * - Tag component uses --color-primary, --color-secondary and --color-on-secondary
+ */
+
+li.component-tag {
+    --color: var(--color-secondary);
+    margin: 5px;
+    display: inline-block;
+    border-radius: 100rem;
+    box-shadow: 0 0 0 2px var(--color-secondary);
+    background-color: transparent;
+    color: var(--color-primary);
+    list-style-type: none;
+    transition:
+        background-color 250ms ease,
+        box-shadow 250ms ease;
+}
+
+li.component-tag>span {
+    display: inline-block;
+    position: relative;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: smaller;
+    padding: .25rem 1rem .25rem 2rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+li.component-tag>span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    background-color: var(--custom-color);
+    transform: translateY(-50%);
+}
+
+li.component-tag:hover {
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 0 calc(2px + .25rem) var(--color-secondary);
+}
+
+li.component-tag:hover>span {
+    color: var(--color-on-secondary);
+}
+
+li.component-tag:hover>span::before {
+    background-color: var(--color-on-secondary);
+}

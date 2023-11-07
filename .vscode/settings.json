@@ -1,0 +1,6 @@
+{
+    "livePreview.defaultPreviewPath": "/dist/index.html",
+    "livePreview.portNumber": 1303,
+    "livePreview.customExternalBrowser": "Chrome",
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files"
+}

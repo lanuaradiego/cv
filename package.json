@@ -1,0 +1,33 @@
+{
+  "name": "cv_dlanuara",
+  "version": "1.0.0",
+  "description": "Curriculum Vitae de Diego Adrian Lanuara",
+  "main": "./dist/bundle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "npx webpack --mode production --config webpack.config.prd.js",
+    "build-dev": "npx webpack --mode development --config webpack.config.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lanuaradiego/cv"
+  },
+  "keywords": [
+    "cv",
+    "lanuara"
+  ],
+  "author": "Diego Adrian Lanuara",
+  "license": "LGPL-3.0-only",
+  "devDependencies": {
+    "copy-webpack-plugin": "11.0.0",
+    "css-loader": "6.8.1",
+    "style-loader": "3.3.3",
+    "ts-loader": "9.4.4",
+    "typescript": "5.2.2",
+    "webpack": "5.88.2",
+    "webpack-cli": "5.1.4"
+  }
+}

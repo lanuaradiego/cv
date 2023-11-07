@@ -1,0 +1,42 @@
+<div id="scaffold-container">
+    <style scoped type="text/css">
+        #scaffold-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        #scaffold-main {
+            overflow: auto;
+        }
+
+        #scaffold-content {
+            flex-grow: 1;
+            overflow: auto;
+        }
+
+        #scaffold-sidebar {
+            display: table;
+            overflow: auto;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 556px) {
+            #scaffold-main {
+                display: flex;
+                flex-grow: 1;
+            }
+
+            #scaffold-sidebar {
+                width: unset;
+            }
+        }
+    </style>
+
+    <header id="scaffold-header"></header>
+    <div id="scaffold-main">
+        <aside id="scaffold-sidebar"></aside>
+        <article id="scaffold-content"></article>
+    </div>
+    <footer id="scaffold-footer"></footer>
+</div>

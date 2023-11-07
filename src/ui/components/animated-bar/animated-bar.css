@@ -1,0 +1,37 @@
+/* Working with divs. 
+ * Customize text with var(--custom-text), progress value with var(--custom-value) and var(--custom-height) with the height
+ */
+div.component-animated-bar {
+    --custom-height: 18px;
+    background-color: var(--color-primary-variant);
+    height: var(--custom-height);
+    border-radius: 5px;
+    line-height: calc(var(--custom-height) - 2px);
+    padding: 2px;
+}
+
+div.component-animated-bar::before {
+    color: var(--color-on-secondary);
+    white-space: nowrap;
+    font-size: small;
+    content: var(--custom-text);
+    background-color: var(--color-secondary);
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    width: var(--custom-value);
+    animation: animated-bar-load 2s 0s;
+    -webkit-animation: animated-bar-load 2s 0s;
+}
+
+@keyframes animated-bar-load {
+    from {
+        width: 0%;
+    }
+}
+
+@-webkit-keyframes animated-bar-load {
+    from {
+        width: 0%;
+    }
+}

@@ -1,0 +1,28 @@
+:root {
+    /* The primary font is displayed most frequently across the web */
+    --font-family-primary: "Roboto", sans-serif;
+    /* The primary color is the color displayed most frequently across the web */
+    --color-primary: #222;
+    /* The primary variant color is used to distinguish two elements of the web */
+    --color-primary-variant: #757575;
+    /* The secondary color provides more ways to accent and distinguish your product */
+    --color-secondary: #009688;
+    /* Color used for text and icons displayed on top of the secondary color. */
+    --color-on-secondary: #eee;
+
+    /* Minimum width to be considered a large screen */
+    --size-large-min-width: 556px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    background-color: var(--color-background);
+    font-family: var(--font-family-primary);
+    color: var(--color-primary)
+}
