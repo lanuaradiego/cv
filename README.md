@@ -1,20 +1,20 @@
-# Introduction
+# 📖 Introduction
 
 Welcome to "Behind my CV," thank you very much for showing interest in my work.
 
 The main objective is to build a working environment that facilitates the maintenance and online visualization of my CV.
 
-# Stack
+# 🛠️ Stack
 
 - [Typescript](https://www.typescriptlang.org/)
 - [NodeJS](https://nodejs.org/)
 - [Webpack 5](https://webpack.js.org/)
 
-# Resources
+# 📚 Resources
 
 - [Google Font Icons](https://fonts.google.com/icons)
 
-# Architecture
+# 🏛️ Architecture
 
 The Clean Architecture meta-architecture is applied with the following layers:
 
@@ -55,7 +55,7 @@ flowchart TD
 
 `Core` is a layer that provides functionalities to the other layers.
 
-## UI Layer
+## 🖥️ UI Layer
 
 Some considerations regarding the UI layer:
 
@@ -71,7 +71,7 @@ Some considerations regarding the UI layer:
 - ScreenMap is used to store the relationship between the screen's name and the screen constructor to allow lazy loading/navigation between screens.
 - ScreenManager is responsible for managing the lifecycle of screens by loading and unloading them.
 
-### Screen Lifecycle
+### 🔄 Screen Lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -88,7 +88,7 @@ stateDiagram-v2
     DISPOSED --> [*]
 ```
 
-# CI/CD
+# 🔄 CI/CD
 
 High-level diagram:
 
@@ -130,7 +130,7 @@ sequenceDiagram
     
 ```
 
-# TODO
+# 📝 TODO
 
 - Add a dependency injector: Currently, the dependency containers are built in index.ts.
 - Add unit tests with Jest.
