@@ -1,19 +1,22 @@
-# Introducción
+# Introduction
 
-Bienvenidos a "detrás de mi CV", muchas gracias por demostrar interés en mi trabajo.
+Welcome to "Behind my CV," thank you very much for showing interest in my work.
 
-El objetivo principal es construir un entorno de trabajo que facilite el mantenimiento y la visualización de mi CV de forma online.
+The main objective is to build a working environment that facilitates the maintenance and online visualization of my CV.
 
 # Stack
 
 - [Typescript](https://www.typescriptlang.org/)
 - [NodeJS](https://nodejs.org/)
 - [Webpack 5](https://webpack.js.org/)
+
+# Resources
+
 - [Google Font Icons](https://fonts.google.com/icons)
 
-# Arquitectura
+# Architecture
 
-Se aplica la meta-arquitectura `Clean Architecture` con las siguientes capas:
+The Clean Architecture meta-architecture is applied with the following layers:
 
 ```mermaid
 flowchart TD
@@ -50,23 +53,23 @@ flowchart TD
     UI --> Core
 ```
 
-`Core` es una capa que provee funcionalidades al resto de las capas.
+`Core` is a layer that provides functionalities to the other layers.
 
 ## UI Layer
 
-Algunas consideraciones respecto a la capa de UI:
+Some considerations regarding the UI layer:
 
-- Todas las pantallas extienden la clase `Screen`.
-- `Scaffold` es una clase del tipo `Screen` presenta otros `Screen` como un layout. Se compone de:
+- All screens extend the Screen class.
+- Scaffold is a Screen-type class that presents other Screen elements as a layout. It consists of:
   - Header
   - Sidebar
   - Content
   - Footer
-- El desacople entre los distintos `Screen` se lográ utilizando las clases `CommBus` y `MutableStateFlow/StateFlow`:
-  - `MutableStateFlow/StateFlow`: Utiliza el patrón `Observer` permitiendo a los suscriptores recibir notificaciones de cambios de valores.
-  - `CommBus`: Permite a los `Screen` registrar y obtener `Flow`, y ademas emitir eventos.
-- `ScreenMap` se utiliza para almacenar la relación nombre de `Screen`, constructor de `Screen` para permitir de forma `lazy` cargar/navegar entre `Screen`.
-- `ScreenManager` se encarga de gestionar el ciclo de vida de `Screen` cargando y descargando los `Screen`.
+- Decoupling between different Screen elements is achieved using the CommBus and MutableStateFlow/StateFlow classes:
+  - MutableStateFlow/StateFlow: Uses the Observer pattern, allowing subscribers to receive notifications of value changes.
+  - CommBus: Allows screens to register and obtain Flow, and also emit events.
+- ScreenMap is used to store the relationship between the screen's name and the screen constructor to allow lazy loading/navigation between screens.
+- ScreenManager is responsible for managing the lifecycle of screens by loading and unloading them.
 
 ### Screen Lifecycle
 
@@ -87,7 +90,7 @@ stateDiagram-v2
 
 # CI/CD
 
-Gráfico de alto nivel:
+High-level diagram:
 
 ```mermaid
 sequenceDiagram
@@ -99,35 +102,35 @@ sequenceDiagram
     
     activate You
     activate Main
-    You ->> Main: Crear branch de la funcionalidad()
-    Main -->> You: Branch creado()
+    You ->> Main: Create feature branch()
+    Main -->> You: Branch created()
     deactivate Main
     
     activate Feature
-    You ->> Feature: Subir código al branch()
-    Feature -->> You: Código subido()
+    You ->> Feature: Push code to branch()
+    Feature -->> You: Code pushed()
     
     activate Main
-    You ->> Main: Merge con la rama Main()
-    Main -->> You: Merge completado()
+    You ->> Main: Merge with Main branch()
+    Main -->> You: Merge completed()
     deactivate You
     deactivate Feature
     deactivate Main
 
     activate GitHubActions
-    GitHubActions ->> Main: Build de la solución()
-    Main -->> GitHubActions: Build exitoso()
+    GitHubActions ->> Main: Build the solution()
+    Main -->> GitHubActions: Build successful()
     
     activate GitHubPages
-    GitHubActions ->> GitHubPages: Deploy de la solución()
-    GitHubPages -->> GitHubActions: Deploy exitoso()
+    GitHubActions ->> GitHubPages: Deploy the solution()
+    GitHubPages -->> GitHubActions: Deployment successful()
     deactivate GitHubActions
-    GitHubPages ->> GitHubPages: Servir página web()
+    GitHubPages ->> GitHubPages: Serve the web page()
     deactivate GitHubPages
     
 ```
 
 # TODO
 
-- Agregar un inyector de dependencias: Actualmente los contenedores de dependencias son construidos en `index.ts`.
-- Agregar test unitarios con `Jest`.
+- Add a dependency injector: Currently, the dependency containers are built in index.ts.
+- Add unit tests with Jest.
