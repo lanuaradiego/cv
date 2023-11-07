@@ -1,6 +1,3 @@
-
-[[_TOC_]]
-
 # Introducción
 
 Bienvenidos a "detrás de mi CV", muchas gracias por demostrar interés en mi trabajo.
