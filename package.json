@@ -1,6 +1,6 @@
 {
   "name": "cv_dlanuara",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Curriculum Vitae de Diego Adrian Lanuara",
   "main": "./dist/bundle.js",
   "directories": {
