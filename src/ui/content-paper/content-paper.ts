@@ -66,7 +66,7 @@ export default class ContentPaper extends MicroFrontend {
         const img = container.querySelector("img")!;
         img.onload = _ => container.querySelector("span")!.style.display = "block";
         img.onerror = _ => container.remove();
-        img.src = `https://image-charts.com/chart?chs=150x150&cht=qr&chl=${encodeURI(location.href)}`;
+        img.src = `https://image-charts.com/chart?chs=100x100&cht=qr&chl=${encodeURI(location.href)}`;
     }
 
     private initPersonalInformation(parent: HTMLElement, info: PersonalInformation) {
