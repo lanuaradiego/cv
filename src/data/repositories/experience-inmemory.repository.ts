@@ -31,31 +31,8 @@ export default class ExperienceInMemoryRepository implements ExperienceRepositor
             null,
             new Date(2024, 9, 10),
             null,
-            "ICBC's hybrid applications, home banking (https://play.google.com/store/apps/details?id=com.icbc.mobile.abroadARG) and YOY (https://play.google.com/store/apps/details?id=com.icbc.mobile.ds):"
-            + "\n- Communication between the application cells (15 cells) and the Solution Mobile Architecture team."
-            + "\n- Managing the lifecycle on Google Play Console, analyzing crashes, ANRs (Application Not Responding) and feedback."
-            + "\n- Compiling applications and distributing them among the cells."
-            + "\n- Initial issue analysis: Are the issues Android-related or web-related?"
-            + "\n- Identifying pain points, potential solutions and defining specific actions for each application."
-            + "\n- Defining, documenting and validating the use of design patterns in the applications."
-            + "\n- Conducting PoCs (Proof of Concepts) on new technologies products, and/or frameworks."
-            + "\n- Ensuring that projects comply with standards, patterns and best practices."
-            ,
-            [
-                await this.getSkillOrThrow("Android"),
-                await this.getSkillOrThrow("Apache Cordova 10/11"),
-                await this.getSkillOrThrow("Java"),
-                await this.getSkillOrThrow("Kotlin"),
-                await this.getSkillOrThrow("Visual Paradigm"),
-                await this.getSkillOrThrow("Testing"),
-                await this.getSkillOrThrow("XML"),
-                await this.getSkillOrThrow("Jetpack Compose"),
-                await this.getSkillOrThrow("Web"),
-                await this.getSkillOrThrow("Typescript"),
-                await this.getSkillOrThrow("Bash"),
-                await this.getSkillOrThrow("Google Play Console"),
-                await this.getSkillOrThrow("Appstore Development"),
-            ],
+            "ICBC's hybrid applications.",
+            [],
             null
         )
     }
