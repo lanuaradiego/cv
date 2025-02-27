@@ -31,19 +31,6 @@ export default class ExperienceInMemoryRepository implements ExperienceRepositor
             null,
             new Date(2024, 9, 10),
             null,
-            "ICBC's hybrid applications.",
-            [],
-            null
-        )
-    }
-
-    private async getExperienceIBM(): Promise<Experience> {
-        return new Experience(
-            "IBM Argentina (Consulting, Banking)",
-            "Mobile Android Architect",
-            null,
-            new Date(2021, 1, 8),
-            new Date(2024, 9, 9),
             "ICBC's hybrid applications, home banking (https://play.google.com/store/apps/details?id=com.icbc.mobile.abroadARG) and YOY (https://play.google.com/store/apps/details?id=com.icbc.mobile.ds):"
             + "\n- Communication between the application cells (15 cells) and the Solution Mobile Architecture team."
             + "\n- Managing the lifecycle on Google Play Console, analyzing crashes, ANRs (Application Not Responding) and feedback."
@@ -69,6 +56,19 @@ export default class ExperienceInMemoryRepository implements ExperienceRepositor
                 await this.getSkillOrThrow("Google Play Console"),
                 await this.getSkillOrThrow("Appstore Development"),
             ],
+            null
+        )
+    }
+
+    private async getExperienceIBM(): Promise<Experience> {
+        return new Experience(
+            "IBM Argentina (Consulting, Banking)",
+            "Mobile Android Architect",
+            null,
+            new Date(2021, 1, 8),
+            new Date(2024, 9, 9),
+            "ICBC's hybrid applications.",
+            [],
             null
         )
     }
